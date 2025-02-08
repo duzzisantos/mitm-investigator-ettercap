@@ -3,7 +3,7 @@ import subprocess
 
 def run_ettercap(interface: str):
     try:
-        command = ["sudo", "ettercap", "-T", "-i", interface]
+        command = ["sudo", "ettercap", "-Tq", "-i", interface, "-M", "arp", "//", "//"]
 
         process = subprocess.Popen(
             command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
